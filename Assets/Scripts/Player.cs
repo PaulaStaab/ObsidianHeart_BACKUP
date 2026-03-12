@@ -114,7 +114,7 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""8eec6f4e-7e0b-49e1-a0a3-a8d59067111a"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -133,28 +133,6 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""79edb5ef-a0ac-47af-bb62-d4ba92dc8a6e"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""ecce4633-0f32-4e9e-bdf0-041b3eb9ac55"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""forward"",
                     ""id"": ""f28bc0da-c156-4d07-8f55-b2b8b35384a5"",
                     ""path"": ""<Keyboard>/w"",
@@ -169,6 +147,28 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""name"": ""backward"",
                     ""id"": ""9479beef-f27c-4b94-8b93-a7274eed466c"",
                     ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""79edb5ef-a0ac-47af-bb62-d4ba92dc8a6e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ecce4633-0f32-4e9e-bdf0-041b3eb9ac55"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -210,34 +210,6 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Sprint"",
-            ""id"": ""2bd82a8b-5454-4290-8dfc-5d9603f9285f"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""554f97b6-eee1-40a2-bdfb-943fe863da44"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""3b331e33-ee36-481c-901c-36c7c4b1c641"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -259,15 +231,11 @@ public partial class @Player: IInputActionCollection2, IDisposable
         m_PlayerActions_Move = m_PlayerActions.FindAction("Move", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Look = m_PlayerActions.FindAction("Look", throwIfNotFound: true);
-        // Sprint
-        m_Sprint = asset.FindActionMap("Sprint", throwIfNotFound: true);
-        m_Sprint_Newaction = m_Sprint.FindAction("New action", throwIfNotFound: true);
     }
 
     ~@Player()
     {
         UnityEngine.Debug.Assert(!m_PlayerActions.enabled, "This will cause a leak and performance issues, Player.PlayerActions.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Sprint.enabled, "This will cause a leak and performance issues, Player.Sprint.Disable() has not been called.");
     }
 
     /// <summary>
@@ -457,102 +425,6 @@ public partial class @Player: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="PlayerActionsActions" /> instance referencing this action map.
     /// </summary>
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
-
-    // Sprint
-    private readonly InputActionMap m_Sprint;
-    private List<ISprintActions> m_SprintActionsCallbackInterfaces = new List<ISprintActions>();
-    private readonly InputAction m_Sprint_Newaction;
-    /// <summary>
-    /// Provides access to input actions defined in input action map "Sprint".
-    /// </summary>
-    public struct SprintActions
-    {
-        private @Player m_Wrapper;
-
-        /// <summary>
-        /// Construct a new instance of the input action map wrapper class.
-        /// </summary>
-        public SprintActions(@Player wrapper) { m_Wrapper = wrapper; }
-        /// <summary>
-        /// Provides access to the underlying input action "Sprint/Newaction".
-        /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Sprint_Newaction;
-        /// <summary>
-        /// Provides access to the underlying input action map instance.
-        /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Sprint; }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
-        public void Enable() { Get().Enable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
-        public void Disable() { Get().Disable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
-        public bool enabled => Get().enabled;
-        /// <summary>
-        /// Implicitly converts an <see ref="SprintActions" /> to an <see ref="InputActionMap" /> instance.
-        /// </summary>
-        public static implicit operator InputActionMap(SprintActions set) { return set.Get(); }
-        /// <summary>
-        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <param name="instance">Callback instance.</param>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
-        /// </remarks>
-        /// <seealso cref="SprintActions" />
-        public void AddCallbacks(ISprintActions instance)
-        {
-            if (instance == null || m_Wrapper.m_SprintActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_SprintActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        /// <summary>
-        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <remarks>
-        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
-        /// </remarks>
-        /// <seealso cref="SprintActions" />
-        private void UnregisterCallbacks(ISprintActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="SprintActions.UnregisterCallbacks(ISprintActions)" />.
-        /// </summary>
-        /// <seealso cref="SprintActions.UnregisterCallbacks(ISprintActions)" />
-        public void RemoveCallbacks(ISprintActions instance)
-        {
-            if (m_Wrapper.m_SprintActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        /// <summary>
-        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
-        /// </summary>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
-        /// </remarks>
-        /// <seealso cref="SprintActions.AddCallbacks(ISprintActions)" />
-        /// <seealso cref="SprintActions.RemoveCallbacks(ISprintActions)" />
-        /// <seealso cref="SprintActions.UnregisterCallbacks(ISprintActions)" />
-        public void SetCallbacks(ISprintActions instance)
-        {
-            foreach (var item in m_Wrapper.m_SprintActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_SprintActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    /// <summary>
-    /// Provides a new <see cref="SprintActions" /> instance referencing this action map.
-    /// </summary>
-    public SprintActions @Sprint => new SprintActions(this);
     private int m_NewControlSchemeSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -594,20 +466,5 @@ public partial class @Player: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
-    }
-    /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Sprint" which allows adding and removing callbacks.
-    /// </summary>
-    /// <seealso cref="SprintActions.AddCallbacks(ISprintActions)" />
-    /// <seealso cref="SprintActions.RemoveCallbacks(ISprintActions)" />
-    public interface ISprintActions
-    {
-        /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
     }
 }

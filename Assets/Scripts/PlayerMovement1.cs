@@ -7,12 +7,18 @@ public class PlayerMovement1 : MonoBehaviour
     [SerializeField] private float runSpeed = 20f;
 
     [Header("Kamera Referenz")]
-    [SerializeField] private Transform cameraTransform;     // ← das Feld erscheint im Inspector
+    [SerializeField] private Transform cameraTransform;     // das Feld erscheint im Inspector
 
     private Rigidbody rb;
     private bool isRunning = false;
-    private Vector2 moveInput;
+    private Vector3 moveInput;
 
+
+    void update()
+    {
+        float moveX = Input.GetAxis("Horizontal"); // Standard: A/D oder Pfeiltasten links/rechts
+        float moveZ = Input.GetAxis("Vertical");   // Standard: W/S oder Pfeiltasten hoch/runter
+    }
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,19 +28,16 @@ public class PlayerMovement1 : MonoBehaviour
             enabled = false;
         }
 
-        // Kamera wird jetzt per Inspector gesetzt → wir prüfen nur noch
         if (cameraTransform == null)
         {
             Debug.LogError("Keine Kamera im Inspector von " + gameObject.name + " zugewiesen!");
-            // Optional: Versuch trotzdem MainCamera als Fallback
-            if (Camera.main != null) cameraTransform = Camera.main.transform;
         }
     }
 
     // OnMove & OnSprint bleiben gleich
     public void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
+        moveInput = value.Get<Vector3>();
     }
 
     public void OnSprint(InputValue value)
@@ -65,4 +68,6 @@ public class PlayerMovement1 : MonoBehaviour
 
         rb.linearVelocity = velocity;
     }
+
+    
 }
