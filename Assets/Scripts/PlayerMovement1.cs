@@ -1,37 +1,40 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement1 : MonoBehaviour
 {
-    public float speed = 3f;
-    public float runSpeed = 20f;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float runSpeed = 20f;
+
+    [Header("Kamera Referenz")]
+    [SerializeField] private Transform cameraTransform;     // ← das Feld erscheint im Inspector
+
     private Rigidbody rb;
     private bool isRunning = false;
-    private Transform cameraTransform;
+    private Vector2 moveInput;
 
-
-    // Speicher f�r den aktuellen Input-Vektor
-    private Vector3 moveInput;
-
-    void Update()
-    {
-        // Bewegungseingaben abfragen
-        float moveX = Input.GetAxis("Horizontal"); // Standard: A/D oder Pfeiltasten links/rechts
-        float moveY = Input.GetAxis("Vertical");   // Standard: W/S oder Pfeiltasten hoch/runter
-
-        // Richtung relativ zur Kamera berechnen
-        Vector3 movementDirection = cameraTransform.right * moveX + cameraTransform.forward * moveY;
-        movementDirection = Vector3.ProjectOnPlane(movementDirection, Vector3.up).normalized;
-    }
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody fehlt am " + gameObject.name);
+            enabled = false;
+        }
+
+        // Kamera wird jetzt per Inspector gesetzt → wir prüfen nur noch
+        if (cameraTransform == null)
+        {
+            Debug.LogError("Keine Kamera im Inspector von " + gameObject.name + " zugewiesen!");
+            // Optional: Versuch trotzdem MainCamera als Fallback
+            if (Camera.main != null) cameraTransform = Camera.main.transform;
+        }
     }
 
+    // OnMove & OnSprint bleiben gleich
     public void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector3>();
-        Debug.Log("Input empfangen: " + moveInput);
+        moveInput = value.Get<Vector2>();
     }
 
     public void OnSprint(InputValue value)
@@ -39,7 +42,6 @@ public class PlayerMovement1 : MonoBehaviour
         isRunning = value.isPressed;
     }
 
-    // FixedUpdate ist perfekt f�r Rigidbody-Bewegungen
     void FixedUpdate()
     {
         MovePlayer();
@@ -47,10 +49,20 @@ public class PlayerMovement1 : MonoBehaviour
 
     void MovePlayer()
     {
+        if (rb == null || cameraTransform == null) return;
+
         float currentSpeed = isRunning ? runSpeed : speed;
 
-        Vector3 movement = new Vector3(moveInput.x * currentSpeed, rb.linearVelocity.y, moveInput.z * currentSpeed);
+        // Richtung relativ zur Kamera
+        Vector3 moveDirection =
+            cameraTransform.right * moveInput.x +
+            cameraTransform.forward * moveInput.y;
 
-        rb.linearVelocity = movement;
+        moveDirection = Vector3.ProjectOnPlane(moveDirection, Vector3.up).normalized;
+
+        Vector3 velocity = moveDirection * currentSpeed;
+        velocity.y = rb.linearVelocity.y;           // Gravitation / Y-Geschwindigkeit erhalten
+
+        rb.linearVelocity = velocity;
     }
 }

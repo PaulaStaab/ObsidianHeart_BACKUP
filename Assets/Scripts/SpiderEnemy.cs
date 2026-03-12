@@ -29,11 +29,10 @@ public class SpiderEnemy : MonoBehaviour
         );
 
         if (Vector2.Distance(transform.position, currentTarget.position) < 0.1f)
-        {
-            currentTarget = currentTarget == pointA ? pointB : pointA;
+        {currentTarget = currentTarget == pointA ? pointB : pointA;
             Vector3 scale = transform.localScale;
             scale.x *= -1;
-            transform.localScale = scale;
+            transform.localScale = scale; 
         }
     }
 }
