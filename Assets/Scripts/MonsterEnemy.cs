@@ -9,8 +9,6 @@ public class MonsterEnemy : MonoBehaviour
     [Header("Prefabs")]
     public GameObject monsterPrefab; // Monster-Prefab
 
-    private Transform playerTarget;
-
 
     void Update()
     {
