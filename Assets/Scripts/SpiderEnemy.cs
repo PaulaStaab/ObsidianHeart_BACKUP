@@ -7,32 +7,29 @@ public class SpiderEnemy : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
 
-    [Header("Prefab")]
-    public GameObject spiderPrefab; // Hier dein Spinnen-Prefab reinziehen
-
     private Transform currentTarget;
 
     void Start()
     {
-        currentTarget = pointB;
+        if (pointA == null || pointB == null) return; // Optional: Prüfe Points
+        currentTarget = pointA;
     }
 
     void Update()
     {
-        if (spiderPrefab == null)
-            return;
-
-        transform.position = Vector2.MoveTowards(
+        // 3D-Version für deine Spinne
+        transform.position = Vector3.MoveTowards(
             transform.position,
             currentTarget.position,
             speed * Time.deltaTime
         );
 
-        if (Vector2.Distance(transform.position, currentTarget.position) < 0.1f)
-        {currentTarget = currentTarget == pointA ? pointB : pointA;
+        if (Vector3.Distance(transform.position, currentTarget.position) < 0.1f)
+        {
+            currentTarget = (currentTarget == pointA) ? pointB : pointA;
             Vector3 scale = transform.localScale;
             scale.x *= -1;
-            transform.localScale = scale; 
+            transform.localScale = scale;
         }
     }
 }
