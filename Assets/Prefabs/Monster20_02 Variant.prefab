@@ -65,9 +65,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4787734284849576031, guid: 2c8149d8df5813b479928d3b7cbd004d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 35716842480662847}
-    - targetCorrespondingSourceObject: {fileID: 4787734284849576031, guid: 2c8149d8df5813b479928d3b7cbd004d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3736726857993672878}
   m_SourcePrefab: {fileID: 100100000, guid: 2c8149d8df5813b479928d3b7cbd004d, type: 3}
 --- !u!1 &3507966527494116524 stripped
 GameObject:
@@ -141,18 +138,3 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &3736726857993672878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507966527494116524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c80e7f88bcc134e97faf7666b3873b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  stopDistance: 1.5
-  monsterPrefab: {fileID: 3507966527494116524}
