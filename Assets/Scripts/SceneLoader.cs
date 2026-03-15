@@ -4,18 +4,18 @@ using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    public void LoadScene(string GameScene)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        StartCoroutine(LoadSceneAsync(GameScene));
     }
 
-    private IEnumerator LoadSceneAsync(string sceneName)
+    private IEnumerator LoadSceneAsync(string GameScene)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(GameScene);
 
         if (operation == null)
         {
-            Debug.LogError("Scene '" + sceneName + "' could not be loaded.");
+            Debug.LogError("Scene '" + GameScene + "' could not be loaded.");
             yield break;
         }
 

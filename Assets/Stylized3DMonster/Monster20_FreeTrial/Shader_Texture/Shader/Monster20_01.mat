@@ -215,7 +215,7 @@ Material:
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightDir: {r: 1, g: 1, b: 1, a: 1}
     - _MetallicColor: {r: 0.2018512, g: 0.26115102, b: 0.5283019, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.49092, g: 0, b: 1, a: 1}
     - _RimColor: {r: 0.84899163, g: 1, b: 0, a: 1}
     - _RimColor1: {r: 0, g: 1, b: 0.029190063, a: 1}
     - _RimColor2: {r: 1, g: 0.43300706, b: 0, a: 1}
