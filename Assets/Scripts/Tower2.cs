@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tower1 : MonoBehaviour
+public class Tower2 : MonoBehaviour
 {
     [Header("Schieﬂen")]
     public GameObject bulletPrefab; // Dein bestehendes Bullet-Prefab zuweisen
@@ -48,17 +48,17 @@ public class Tower1 : MonoBehaviour
 
     void Shoot(Transform target)
     {
-        if (bulletPrefab == null) return;
+        Vector3 dir = (target.position - transform.position).normalized;  // Von Turm-Mitte
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Vector3 dir = (target.position - firePoint.position).normalized;
-        
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward * 1f, Quaternion.identity);
+
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = dir * -30f; // Richtet und schieﬂt deine Bullet
+            rb.linearVelocity = dir * 30f;
         }
     }
+
 
     void OnDrawGizmosSelected()
     {

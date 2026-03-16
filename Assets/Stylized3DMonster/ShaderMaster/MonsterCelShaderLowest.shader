@@ -1,4 +1,4 @@
-﻿Shader "Universal Render Pipeline Lit"
+﻿Shader "PVFX/PVFX_URP_Lowest_CelShader1.0"
 {
     Properties
     {

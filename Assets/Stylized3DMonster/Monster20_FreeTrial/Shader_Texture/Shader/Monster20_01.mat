@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4a9b7324fc3762044b17aa4cdda655b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0da3960c5cc79ce4a89d753f145b5fda, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -215,18 +215,17 @@ Material:
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightDir: {r: 1, g: 1, b: 1, a: 1}
     - _MetallicColor: {r: 0.2018512, g: 0.26115102, b: 0.5283019, a: 1}
-    - _OutlineColor: {r: 0.49092, g: 0, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.84899163, g: 1, b: 0, a: 1}
     - _RimColor1: {r: 0, g: 1, b: 0.029190063, a: 1}
     - _RimColor2: {r: 1, g: 0.43300706, b: 0, a: 1}
     - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _ShadeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadeColor: {r: 1, g: 0.08880386, b: 0, a: 1}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0, g: 1, b: 0.007843256, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &6397621526885861677
 MonoBehaviour:
   m_ObjectHideFlags: 11
