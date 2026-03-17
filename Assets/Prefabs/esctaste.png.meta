@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61e84b333f9c31f4aa09452b53d13c50
+guid: e1326bdb6023930478c334e6474bdcbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Albedo_0
+      name: esctaste_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 6
+        y: 6
+        width: 1031
+        height: 1028
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f771519f58408479e2a88104e3bc9c
-      internalID: -1893096602
+      spriteID: fa4b45ae37bdfb649966963bd0f32f15
+      internalID: -1151795144
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4592411bc6cd6a14e9cd9c8bbf539fdb
+    spriteID: 243c3417845f8c94489cebdefa0513b6
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Albedo_0: -1893096602
+      esctaste_0: -1151795144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

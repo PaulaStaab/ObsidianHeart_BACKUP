@@ -1,24 +1,48 @@
 using UnityEngine;
-using TMPro; // Für TextMeshProUGUI, falls verwendet
+using TMPro;
+using System.Collections;
 
 public class Cratercollector : MonoBehaviour
 {
-    [Header("UI Referenz")]
-    [SerializeField] private TextMeshProUGUI ressourcenText; // Ziehe hier dein Text-Element aus dem Canvas rein
+    [Header("UI Referenzen")]
+    [SerializeField] private TextMeshProUGUI ressourcenText;        // Oben rechts Zähler
+    [SerializeField] private GameObject pickupPopupRoot;            // Popup Panel Mitte
+    [SerializeField] private TextMeshProUGUI pickupPopupText;       // Popup Text Mitte
+
+    [Header("Einstellungen")]
+    [SerializeField] private KeyCode pickupKey = KeyCode.E;
+    [SerializeField] private string ressourcenName = "Kristall";
+    [SerializeField] private int ressourcenWert = 1;
+    [SerializeField] private float popupDauer = 1.0f;
+    [SerializeField] private string playerTag = "Player";
+
+    [Header("Reichweite")]
+    [SerializeField] private float sammelReichweite = 5f;          // Abstand zum Krater
+    [SerializeField] private LayerMask playerLayer = -1;            // Player Layer
 
     private int ressourcenMenge = 0;
-    private bool kannSammeln = true; // Verhindert mehrfaches Sammeln am selben Krater
+    private bool playerInReichweite = false;
+    private Transform playerTransform;
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Player") && kannSammeln)
+        if (playerTransform == null) return;
+
+        // Distanz prüfen (VOR dem Krater)
+        float distanz = Vector3.Distance(transform.position, playerTransform.position);
+        playerInReichweite = distanz <= sammelReichweite;
+
+        if (playerInReichweite && Input.GetKeyDown(pickupKey))
         {
-            kannSammeln = false;
-            ressourcenMenge += 1; // +1 Ressource pro Krater
-            UpdateUI();
-            // Optional: Krater deaktivieren oder zerstören
-            // gameObject.SetActive(false);
+            Aufsammeln();
         }
+    }
+
+    private void Aufsammeln()
+    {
+        ressourcenMenge += ressourcenWert;
+        UpdateUI();
+        ZeigePopup();
     }
 
     private void UpdateUI()
@@ -27,5 +51,30 @@ public class Cratercollector : MonoBehaviour
         {
             ressourcenText.text = "Ressourcen: " + ressourcenMenge;
         }
+    }
+
+    private void ZeigePopup()
+    {
+        if (pickupPopupRoot == null || pickupPopupText == null) return;
+
+        pickupPopupText.text = "+" + ressourcenWert + " " + ressourcenName;
+        pickupPopupRoot.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(PopupAusblenden());
+    }
+
+    private IEnumerator PopupAusblenden()
+    {
+        yield return new WaitForSeconds(popupDauer);
+        if (pickupPopupRoot != null)
+            pickupPopupRoot.SetActive(false);
+    }
+
+    // Automatisch Player finden
+    private void Start()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+        if (playerObj != null)
+            playerTransform = playerObj.transform;
     }
 }
