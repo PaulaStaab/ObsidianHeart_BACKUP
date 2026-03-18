@@ -696,6 +696,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &344385584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344385580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c80e7f88bcc134e97faf7666b3873b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  stopDistance: 1.5
+  monsterPrefab: {fileID: 531542686}
+  waypoints:
+  - {fileID: 1098433909}
+  - {fileID: 1028066137}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +824,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &531542686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4787734284849576031, guid: 093fd9b133dee2d4d88b5d5135f7a0c5, type: 3}
+  m_PrefabInstance: {fileID: 1716572439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &552038332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,6 +2823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5475357005505232147, guid: 093fd9b133dee2d4d88b5d5135f7a0c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 344385582}
+    - targetCorrespondingSourceObject: {fileID: 5475357005505232147, guid: 093fd9b133dee2d4d88b5d5135f7a0c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344385584}
   m_SourcePrefab: {fileID: 100100000, guid: 093fd9b133dee2d4d88b5d5135f7a0c5, type: 3}
 --- !u!1 &1789831465 stripped
 GameObject:
