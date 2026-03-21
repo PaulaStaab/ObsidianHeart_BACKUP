@@ -1,37 +1,33 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class RessourcenManager : MonoBehaviour
 {
-    public static RessourcenManager Instance;
+    public static RessourcenManager Instance { get; private set; }  // Property!
+    public int currentRessourcen = 0;
 
-    public int metal; // deine Währung, z.B. "Kristalle"
-
-    private void Awake()
+    // *** WICHTIG: protected virtual *** 
+    protected virtual void Awake()
     {
-        // Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // Reset auf 0 für neuen Spielrun (kein Laden aus PlayerPrefs)
-        metal = 0;
+        Debug.Log("RessourcenManager gestartet!");
     }
 
-    public void RessourcenHinzufügen(int menge)
+    public bool SpendRessource(int kosten)
     {
-        metal += menge;
-        Debug.Log("Ressourcen: " + metal);
-    }
-
-    public bool RessourcenAusgeben(int menge)
-    {
-        if (metal < menge) return false;
-        metal -= menge;
-        Debug.Log("Ressourcen nach Ausgabe: " + metal);
-        return true;
+        if (currentRessourcen >= kosten)
+        {
+            currentRessourcen -= kosten;
+            Debug.Log($"Ressourcen gespendet: {kosten}, Rest: {currentRessourcen}");
+            return true;
+        }
+        Debug.Log($"Nicht genug! Brauche {kosten}, habe {currentRessourcen}");
+        return false;
     }
 }
