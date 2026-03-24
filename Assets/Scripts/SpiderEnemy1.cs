@@ -6,7 +6,6 @@ public class SpiderEnemy1 : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public float speed = 3f;
-    private float rotationVelocity = 0f;
 
     [Header("Spawn")]
     public GameObject spiderPrefab;

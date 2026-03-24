@@ -58,7 +58,7 @@ public class SpiderHealth : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))  // Tag "Bullet" auf Bullet-Objekten setzen
         {
-            Bullet bullet = other.GetComponent<Bullet>();
+            BulletDamage bullet = other.GetComponent<BulletDamage>();
             if (bullet != null)
             {
                 TakeDamage(bullet.damage);  // Damage aus Bullet-Skript
