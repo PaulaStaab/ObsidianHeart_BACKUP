@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 37329410}
   - component: {fileID: 37329412}
   - component: {fileID: 37329411}
+  - component: {fileID: 37329413}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -153,10 +154,10 @@ RectTransform:
   - {fileID: 309637613}
   m_Father: {fileID: 216519295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 735.25037, y: 493}
-  m_SizeDelta: {x: -1512.3328, y: -1007.5095}
+  m_AnchoredPosition: {x: -224.74963, y: -47}
+  m_SizeDelta: {x: 408, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &37329411
 MonoBehaviour:
@@ -196,6 +197,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37329409}
   m_CullTransparentMesh: 1
+--- !u!114 &37329413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37329409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 408
+  m_PreferredHeight: 72
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &45138491
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +228,7 @@ GameObject:
   - component: {fileID: 45138492}
   - component: {fileID: 45138494}
   - component: {fileID: 45138493}
+  - component: {fileID: 45138495}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -230,10 +252,10 @@ RectTransform:
   - {fileID: 642390471}
   m_Father: {fileID: 216519295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7.059326, y: -102.109924}
-  m_SizeDelta: {x: -1704.989, y: -997.9323}
+  m_SizeDelta: {x: 215, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45138493
 MonoBehaviour:
@@ -273,6 +295,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45138491}
   m_CullTransparentMesh: 1
+--- !u!114 &45138495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45138491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 215
+  m_PreferredHeight: 82
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &98939093
 GameObject:
   m_ObjectHideFlags: 0
