@@ -18,9 +18,9 @@ public class Cratercollector : MonoBehaviour
 
     [Header("Reichweite")]
     [SerializeField] private float sammelReichweite = 5f;          // Abstand zum Krater
-    [SerializeField] private LayerMask playerLayer = -1;            // Player Layer
+    [SerializeField] private LayerMask playerLayer = -1;           // Player Layer
 
-    private int ressourcenMenge = 0;
+    public int ressourcenMenge = 0;
     private bool playerInReichweite = false;
     private Transform playerTransform;
 
@@ -40,10 +40,24 @@ public class Cratercollector : MonoBehaviour
 
     private void Aufsammeln()
     {
+        // 1) Ressource im RessourcenManager erhöhen
+        if (RessourcenManager.Instance != null)
+        {
+            RessourcenManager.Instance.AddRessourcen(ressourcenWert);
+        }
+
+        // 2) Optional: Lokaler Zähler nur für Anzeige (falls du ihn noch brauchst)
         ressourcenMenge += ressourcenWert;
-        UpdateUI();
+
+        // 3) UI-Text aktualisieren (globaler Wert)
+        if (ressourcenText != null && RessourcenManager.Instance != null)
+        {
+            ressourcenText.text = "Ressourcen: " + RessourcenManager.Instance.currentRessourcen;
+        }
+
         ZeigePopup();
     }
+
 
     private void UpdateUI()
     {
@@ -77,4 +91,14 @@ public class Cratercollector : MonoBehaviour
         if (playerObj != null)
             playerTransform = playerObj.transform;
     }
+
+    // Wird vom RessourcenManager aufgerufen, wenn der Player in seinen Trigger läuft
+    public int NimmAlleRessourcen()
+    {
+        int menge = ressourcenMenge;
+        ressourcenMenge = 0;
+        UpdateUI();
+        return menge;
+    }
 }
+
