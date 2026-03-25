@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tower
   - Spinne
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -19,11 +19,11 @@ public class MonsterEnemy : MonoBehaviour
             return;
 
         Transform target = waypoints[currentWaypointIndex];
-        float dist = Vector2.Distance(transform.position, target.position);
+        float dist = Vector3.Distance(transform.position, target.position);
 
         if (dist > stopDistance)
         {
-            transform.position = Vector2.MoveTowards(
+            transform.position = Vector3.MoveTowards(
                 transform.position,
                 target.position,
                 speed * Time.deltaTime
