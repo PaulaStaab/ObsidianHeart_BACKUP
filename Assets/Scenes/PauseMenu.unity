@@ -301,13 +301,15 @@ GameObject:
   - component: {fileID: 346253867}
   - component: {fileID: 346253868}
   - component: {fileID: 346253869}
+  - component: {fileID: 346253870}
+  - component: {fileID: 346253871}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PauseMenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &346253867
 Transform:
   m_ObjectHideFlags: 0
@@ -348,6 +350,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9803f24f24dd027408baa4142e6a2624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &346253870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346253866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d5574b6026f2146b89ce49071526b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YesButton
+--- !u!114 &346253871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346253866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a820c8a4382a94bbb5bdbd07b13b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GamePauseHandler
+  pauseMenuSceneName: PauseMenu
 --- !u!1 &400603133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,9 +1124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346253869}
-        m_TargetAssemblyTypeName: ContinueGameButton, Assembly-CSharp
-        m_MethodName: ResumeGameplay
+      - m_Target: {fileID: 346253871}
+        m_TargetAssemblyTypeName: GamePauseHandler, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1580,7 +1607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1975,7 +2002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1971145498}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346253870}
+        m_TargetAssemblyTypeName: YesButton, Assembly-CSharp
+        m_MethodName: GoToStartScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2062742974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
