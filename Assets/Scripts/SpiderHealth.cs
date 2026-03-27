@@ -31,7 +31,7 @@ using UnityEngine;
 public class SpiderHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-    private float currentHealth;
+    public float currentHealth;
 
     void Start()
     {
