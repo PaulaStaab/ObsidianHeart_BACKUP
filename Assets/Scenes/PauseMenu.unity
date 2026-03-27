@@ -374,7 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a820c8a4382a94bbb5bdbd07b13b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamePauseHandler
-  pauseMenuSceneName: PauseMenu
+  pauseCanvas: {fileID: 690945892}
+  escapeMenu: {fileID: 1397359015}
 --- !u!1 &400603133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1495,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290843487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346253866}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1290843487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1656,7 @@ GameObject:
   - component: {fileID: 1397359018}
   - component: {fileID: 1397359017}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: EscapeMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
