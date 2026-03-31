@@ -17,12 +17,12 @@ public class TowerRotation : MonoBehaviour
         {
             // Zum Halbkreis (180 Grad) rotieren
             Quaternion startRot = transform.rotation;
-            Quaternion endRot = startRot * Quaternion.Euler(0, 180f, 0);
+            Quaternion endRot = startRot * Quaternion.Euler(0, 45f, 0);
             float elapsed = 0f;
             while (elapsed < 1f)
             {
                 transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed);
-                elapsed += Time.deltaTime * rotationSpeed / 180f;
+                elapsed += Time.deltaTime * rotationSpeed / 45f;
                 yield return null;
             }
             transform.rotation = endRot; // Exakte Endrotation sicherstellen [web:19]
@@ -37,7 +37,7 @@ public class TowerRotation : MonoBehaviour
             while (elapsed < 1f)
             {
                 transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed);
-                elapsed += Time.deltaTime * rotationSpeed / 180f;
+                elapsed += Time.deltaTime * rotationSpeed / 45f;
                 yield return null;
             }
             transform.rotation = endRot;
