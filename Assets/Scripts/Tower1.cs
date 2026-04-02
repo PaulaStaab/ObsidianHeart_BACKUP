@@ -433,12 +433,6 @@ public class Tower1 : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, searchRadius);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, range);
-
         DrawFirePointGizmo(firePoint1, Color.cyan);
         DrawFirePointGizmo(firePoint2, Color.green);
         DrawFirePointGizmo(firePoint3, Color.magenta);
