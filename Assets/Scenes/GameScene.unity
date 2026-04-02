@@ -762,7 +762,7 @@ Transform:
   m_GameObject: {fileID: 224380370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1231.7, y: -2.88, z: 152.7}
+  m_LocalPosition: {x: -1231.7, y: -2.88, z: 191}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1701,6 +1701,23 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &569945977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156742191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6b913fab3a5349a509b5ac5672975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerLeveling_Tower2
+  level: 1
+  basisKosten: 20
+  kanone1: {fileID: 1159091255}
+  kanone2: {fileID: 518892781}
+  kanone3: {fileID: 1554100994}
 --- !u!1 &598588208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa40b8294c471e74eb69433a52d9789e, type: 3}
@@ -2059,6 +2076,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569945976}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569945977}
   m_SourcePrefab: {fileID: 100100000, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
 --- !u!1 &793828760
 GameObject:
@@ -2904,6 +2924,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1159091255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
+  m_PrefabInstance: {fileID: 766483451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1180839457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3780,7 @@ Transform:
   m_GameObject: {fileID: 1346246916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1189, y: -2.65, z: 150}
+  m_LocalPosition: {x: -1189, y: -2.65, z: 205.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
