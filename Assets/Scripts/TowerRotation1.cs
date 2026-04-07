@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class TowerRotation : MonoBehaviour
+public class TowerRotation1 : MonoBehaviour
 {
     public float rotationSpeed = 45f; // Grad pro Sekunde
     public float pauseDuration = 1f;
@@ -12,7 +12,7 @@ public class TowerRotation : MonoBehaviour
     void Start()
     {
         initialRotation = transform.localRotation;
-        targetRotation = initialRotation * Quaternion.Euler(0, -90f, 0);
+        targetRotation = initialRotation * Quaternion.Euler(0, 90f, 0);
 
         StartCoroutine(RotateBackAndForth());
     }

@@ -1547,7 +1547,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+<<<<<<< Updated upstream
 --- !u!114 &569945975
+=======
+--- !u!114 &569945976
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1556,10 +1560,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 156742191}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: f17c70617f07fe248910c29d0d845c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
   rotationSpeed: 15
+=======
+  m_Script: {fileID: 11500000, guid: 609de869b02fc8b48bcd8deef3c1dd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerManager_2
+  bulletPrefab2: {fileID: 1061278560386882143, guid: 693111ca4b201ef4ebac8d20d18fbd86, type: 3}
+  firePoint1: {fileID: 793828761}
+  bulletPrefab3: {fileID: 1061278560386882143, guid: 693111ca4b201ef4ebac8d20d18fbd86, type: 3}
+  firePoint2: {fileID: 1348329044}
+  bulletPrefab4: {fileID: 1061278560386882143, guid: 693111ca4b201ef4ebac8d20d18fbd86, type: 3}
+  firePoint3: {fileID: 1736101591}
+  fireRate: 1
+  range: 10
+  bulletSpeed: 30
+  bulletLifetime: 10
+  delayBeforeFirstShot: 0
+  shootAngleX: 13
+  shootAngleY: -92.85419
+  shootAngleZ: 0
+  rotateToTarget: 1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &569945977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156742191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6b913fab3a5349a509b5ac5672975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerLeveling_Tower2
+  level: 1
+  basisKosten: 20
+  kanone1: {fileID: 1159091255}
+  kanone2: {fileID: 518892781}
+  kanone3: {fileID: 1554100994}
+--- !u!114 &569945978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156742191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce6f5918abae8747b2834e44f35ef83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation1
+  rotationSpeed: 45
+>>>>>>> Stashed changes
   pauseDuration: 1
 --- !u!1 &598588208 stripped
 GameObject:
@@ -1780,7 +1838,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 4.2926025
+=======
+      value: 6.5
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1834,7 +1896,17 @@ PrefabInstance:
       addedObject: {fileID: 569945973}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
       insertIndex: -1
+<<<<<<< Updated upstream
       addedObject: {fileID: 569945975}
+=======
+      addedObject: {fileID: 569945976}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569945977}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569945978}
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: adb5e2779974e764db3f6cb0ed421645, type: 3}
 --- !u!1001 &812885414
 PrefabInstance:
@@ -1854,7 +1926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: -19.76001
+=======
+      value: 39.1
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
       propertyPath: m_LocalRotation.w
