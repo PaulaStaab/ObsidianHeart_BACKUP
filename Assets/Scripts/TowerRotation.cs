@@ -25,7 +25,7 @@ public class TowerRotation : MonoBehaviour
                 elapsed += Time.deltaTime * rotationSpeed / 45f;
                 yield return null;
             }
-            transform.rotation = endRot; // Exakte Endrotation sicherstellen [web:19]
+            transform.rotation = endRot; // Exakte Endrotation sicherstellen
 
             // Pause
             yield return new WaitForSeconds(pauseDuration);
