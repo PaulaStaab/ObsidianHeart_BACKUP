@@ -33,7 +33,7 @@ public class Bullet2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Spinne"))
+        if (other.CompareTag("Enemy"))
         {
             SpiderHealth enemyHealth = other.GetComponent<SpiderHealth>();
             if (enemyHealth != null)

@@ -7,11 +7,12 @@ TagManager:
   - Tower
   - Spinne
   - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
