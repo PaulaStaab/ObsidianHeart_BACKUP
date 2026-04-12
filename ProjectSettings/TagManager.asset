@@ -8,6 +8,7 @@ TagManager:
   - Spinne
   - Bullet
   - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX
