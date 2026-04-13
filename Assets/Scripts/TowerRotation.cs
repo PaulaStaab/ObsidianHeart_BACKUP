@@ -17,7 +17,7 @@ public class TowerRotation : MonoBehaviour
         {
             // Zum Halbkreis (180 Grad) rotieren
             Quaternion startRot = transform.rotation;
-            Quaternion endRot = startRot * Quaternion.Euler(0, -90f, 0);
+            Quaternion endRot = startRot * Quaternion.Euler(0, 90f, 0);
             float elapsed = 0f;
             while (elapsed < 1f)
             {
@@ -32,7 +32,7 @@ public class TowerRotation : MonoBehaviour
 
             // Zurück rotieren
             startRot = transform.rotation;
-            endRot = Quaternion.Euler(0, 0, 0); // Oder ursprüngliche Rotation
+            endRot = Quaternion.Euler(0, 90, 0); // Oder ursprüngliche Rotation
             elapsed = 0f;
             while (elapsed < 1f)
             {
