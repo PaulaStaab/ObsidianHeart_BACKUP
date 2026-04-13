@@ -1,21 +1,20 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TowerLeveling_Tower1 : MonoBehaviour
 {
     public int level = 1;
 
-    // Prefabs für die 3 Stufen
     public GameObject towerLevel2Prefab;
     public GameObject towerLevel3Prefab;
 
-    // Referenz auf das aktuell sichtbare Tower-Objekt
     private GameObject aktuellerTower;
 
-    // Kosten pro Level (einfaches Beispiel)
     public int basisKosten = 20;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Keyboard.current != null && Keyboard.current.hKey.wasPressedThisFrame)
         {
             Debug.Log("H gedrückt bei Tower " + name);
             VersucheUpgrade();
@@ -24,8 +23,10 @@ public class TowerLeveling_Tower1 : MonoBehaviour
 
     public void VersucheUpgrade()
     {
-        // Erstes H: Level1 spawnen (kostenlos oder niedrig)
-        if (level == 0) { /* Platzieren */ }
+        if (level == 0)
+        {
+            // Platzieren
+        }
         else
         {
             Debug.Log("Nicht genug Ressourcen für Upgrade!");
@@ -34,7 +35,6 @@ public class TowerLeveling_Tower1 : MonoBehaviour
 
     private void SetzeTowerAufLevel(int neuesLevel)
     {
-        // alten visuellen Tower löschen
         if (aktuellerTower != null)
         {
             Destroy(aktuellerTower);
@@ -51,18 +51,16 @@ public class TowerLeveling_Tower1 : MonoBehaviour
                 prefab = towerLevel3Prefab;
                 break;
             default:
-                // Max-Level erreicht, nichts mehr ändern
                 prefab = towerLevel3Prefab;
                 level = 3;
                 break;
         }
 
-        // neuen Tower am gleichen Platz erzeugen
         aktuellerTower = Instantiate(
             prefab,
             transform.position,
             transform.rotation,
-            transform // als Kind dieses GameObjects
+            transform
         );
     }
 }

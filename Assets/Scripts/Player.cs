@@ -145,6 +145,15 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cratercollector"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0906476-9a73-4ed0-893e-c90c6eaa382a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -268,6 +277,17 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""action"": ""Upgrade"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b6dfca2-8509-4409-ad0e-f4d794b50bbb"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cratercollector"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -294,6 +314,7 @@ public partial class @Player: IInputActionCollection2, IDisposable
         m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
         m_PlayerActions_Escape = m_PlayerActions.FindAction("Escape", throwIfNotFound: true);
         m_PlayerActions_Upgrade = m_PlayerActions.FindAction("Upgrade", throwIfNotFound: true);
+        m_PlayerActions_Cratercollector = m_PlayerActions.FindAction("Cratercollector", throwIfNotFound: true);
     }
 
     ~@Player()
@@ -380,6 +401,7 @@ public partial class @Player: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Pause;
     private readonly InputAction m_PlayerActions_Escape;
     private readonly InputAction m_PlayerActions_Upgrade;
+    private readonly InputAction m_PlayerActions_Cratercollector;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -415,6 +437,10 @@ public partial class @Player: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerActions/Upgrade".
         /// </summary>
         public InputAction @Upgrade => m_Wrapper.m_PlayerActions_Upgrade;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Cratercollector".
+        /// </summary>
+        public InputAction @Cratercollector => m_Wrapper.m_PlayerActions_Cratercollector;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -459,6 +485,9 @@ public partial class @Player: IInputActionCollection2, IDisposable
             @Upgrade.started += instance.OnUpgrade;
             @Upgrade.performed += instance.OnUpgrade;
             @Upgrade.canceled += instance.OnUpgrade;
+            @Cratercollector.started += instance.OnCratercollector;
+            @Cratercollector.performed += instance.OnCratercollector;
+            @Cratercollector.canceled += instance.OnCratercollector;
         }
 
         /// <summary>
@@ -488,6 +517,9 @@ public partial class @Player: IInputActionCollection2, IDisposable
             @Upgrade.started -= instance.OnUpgrade;
             @Upgrade.performed -= instance.OnUpgrade;
             @Upgrade.canceled -= instance.OnUpgrade;
+            @Cratercollector.started -= instance.OnCratercollector;
+            @Cratercollector.performed -= instance.OnCratercollector;
+            @Cratercollector.canceled -= instance.OnCratercollector;
         }
 
         /// <summary>
@@ -583,5 +615,12 @@ public partial class @Player: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUpgrade(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Cratercollector" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCratercollector(InputAction.CallbackContext context);
     }
 }

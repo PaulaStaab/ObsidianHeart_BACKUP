@@ -741,7 +741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224380371}
   m_Layer: 0
-  m_Name: SpiderPoint A
+  m_Name: Spider_Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -756,7 +756,7 @@ Transform:
   m_GameObject: {fileID: 224380370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1231.7, y: 2.3, z: 89.5}
+  m_LocalPosition: {x: -1231.7, y: 0, z: 82.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1422,6 +1422,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
   m_PrefabInstance: {fileID: 812885414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &512657186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512657178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17c70617f07fe248910c29d0d845c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
+  rotationSpeed: 45
+  pauseDuration: 1
 --- !u!1 &518892781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,7 +1822,7 @@ MonoBehaviour:
   damagedFence: {fileID: 8470313285238082908}
   triggerObject: {fileID: 592007611}
   smokeFx: {fileID: 1486083002}
-  shotsToBreak: 3
+  shotsToBreak: 5
   projectileTag: Projectile
   breakNow: 0
   enableLogs: 1
@@ -1832,7 +1846,6 @@ MonoBehaviour:
   ressourcenText: {fileID: 1252849884}
   pickupPopupRoot: {fileID: 45138491}
   pickupPopupText: {fileID: 1803094357}
-  pickupKey: 101
   ressourcenName: Metall
   ressourcenWert: 1
   popupDauer: 2.68
@@ -2155,6 +2168,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 512657184}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 512657186}
   m_SourcePrefab: {fileID: 100100000, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
 --- !u!1001 &814550783
 PrefabInstance:
@@ -3801,7 +3817,7 @@ Transform:
   m_GameObject: {fileID: 1346246916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1139.7, y: -2.65, z: 75.7}
+  m_LocalPosition: {x: -1064.1, y: -2.65, z: 78.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -11063,6 +11079,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4177214874480362370, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804404718045596554, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 224380371}
+    - target: {fileID: 4804404718045596554, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 1346246917}
+    - target: {fileID: 4804404718045596554, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
+      propertyPath: maxSpinnen
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7162226195055338390, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
       propertyPath: m_Constraints
       value: 116
@@ -11077,7 +11109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7218427220803923609, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 98.5
+      value: 95.4
       objectReference: {fileID: 0}
     - target: {fileID: 7218427220803923609, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11106,6 +11138,10 @@ PrefabInstance:
     - target: {fileID: 7218427220803923609, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816781887460688198, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8888022721164413085, guid: a23082ff1d129de43919409bbeb4a345, type: 3}
       propertyPath: m_Name

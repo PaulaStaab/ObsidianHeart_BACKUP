@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class Cratercollector : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Cratercollector : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pickupPopupText;       // Popup Text Mitte
 
     [Header("Einstellungen")]
-    [SerializeField] private KeyCode pickupKey = KeyCode.E;
+    //[SerializeField] private KeyCode pickupKey = KeyCode.E;
     [SerializeField] private string ressourcenName = "Kristall";
     [SerializeField] private int ressourcenWert = 1;
     [SerializeField] private float popupDauer = 1.0f;
@@ -28,11 +29,10 @@ public class Cratercollector : MonoBehaviour
     {
         if (playerTransform == null) return;
 
-        // Distanz prüfen (VOR dem Krater)
         float distanz = Vector3.Distance(transform.position, playerTransform.position);
         playerInReichweite = distanz <= sammelReichweite;
 
-        if (playerInReichweite && Input.GetKeyDown(pickupKey))
+        if (playerInReichweite && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             Aufsammeln();
         }
@@ -40,16 +40,13 @@ public class Cratercollector : MonoBehaviour
 
     private void Aufsammeln()
     {
-        // 1) Ressource im RessourcenManager erhöhen
         if (RessourcenManager.Instance != null)
         {
             RessourcenManager.Instance.AddRessourcen(ressourcenWert);
         }
 
-        // 2) Optional: Lokaler Zähler nur für Anzeige (falls du ihn noch brauchst)
         ressourcenMenge += ressourcenWert;
 
-        // 3) UI-Text aktualisieren (globaler Wert)
         if (ressourcenText != null && RessourcenManager.Instance != null)
         {
             ressourcenText.text = "Ressourcen: " + RessourcenManager.Instance.currentRessourcen;
@@ -57,7 +54,6 @@ public class Cratercollector : MonoBehaviour
 
         ZeigePopup();
     }
-
 
     private void UpdateUI()
     {
@@ -84,7 +80,6 @@ public class Cratercollector : MonoBehaviour
             pickupPopupRoot.SetActive(false);
     }
 
-    // Automatisch Player finden
     private void Start()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
@@ -92,7 +87,6 @@ public class Cratercollector : MonoBehaviour
             playerTransform = playerObj.transform;
     }
 
-    // Wird vom RessourcenManager aufgerufen, wenn der Player in seinen Trigger läuft
     public int NimmAlleRessourcen()
     {
         int menge = ressourcenMenge;
@@ -101,4 +95,3 @@ public class Cratercollector : MonoBehaviour
         return menge;
     }
 }
-
