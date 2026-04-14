@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Enemy
   - Projectile
+  - Shoot
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall
+  - Enemy
+  - Tower
   - 
   - 
   - 
