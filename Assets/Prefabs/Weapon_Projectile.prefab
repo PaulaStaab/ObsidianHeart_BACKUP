@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponProjectile
   speed: 20
   lifeTime: 3
+  damage: 50
   despawnMask:
     serializedVersion: 2
     m_Bits: 456
