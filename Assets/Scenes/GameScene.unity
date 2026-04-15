@@ -2931,14 +2931,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpiderSpawn
   spinnePrefab: {fileID: 463722737}
-  minX: -1149.6
-  minY: 1.4
-  minZ: 38
-  maxX: -1260
-  maxY: 1.6
-  maxZ: 152
+  spinneMinX: -10
+  spinneMinY: 0
+  spinneMinZ: -10
+  spinneMaxX: 10
+  spinneMaxY: 0
+  spinneMaxZ: 10
   maxSpinnen: 3
-  spawnIntervall: 5
+  spinnenSpawnIntervall: 5
+  monsterPrefab: {fileID: 344385580}
+  monsterMinX: -10
+  monsterMinY: 0
+  monsterMinZ: -10
+  monsterMaxX: 10
+  monsterMaxY: 0
+  monsterMaxZ: 10
+  maxMonster: 5
+  monsterSpawnIntervall: 5
+  creaturePrefab: {fileID: 1961275924}
+  creatureMinX: -10
+  creatureMinY: 0
+  creatureMinZ: -10
+  creatureMaxX: 10
+  creatureMaxY: 0
+  creatureMaxZ: 10
+  maxCreatures: 5
+  creatureSpawnIntervall: 5
 --- !u!1 &1028066136
 GameObject:
   m_ObjectHideFlags: 0
