@@ -12,7 +12,7 @@
                     "id": "b8c7dc1d-1be1-4b59-b6a6-bbd408a88c60",
                     "expectedControlType": "Vector3",
                     "processors": "NormalizeVector3",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
                     "initialStateCheck": true
                 },
                 {
