@@ -30,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 6137976871931873944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.116224, y: -0.3300627, z: -2.6258628}
-  m_LocalScale: {x: 0.46, y: 0.43891826, z: 0.42108533}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194dd994c7085f342bb0319524a0b6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponProjectile
-  speed: 20
+  speed: 100
   lifeTime: 3
+  inheritedVelocityIntensity: 1
   damage: 50
   despawnMask:
     serializedVersion: 2
