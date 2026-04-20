@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 991985464051697771}
   - component: {fileID: 6541320060315382859}
   m_Layer: 0
-  m_Name: vfx_Flamethrower_02
+  m_Name: monster_shot
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4871,7 +4871,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608351009297544715}
   serializedVersion: 5
-  m_Mass: 0.5
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4885,11 +4885,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!114 &6541320060315382859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4902,8 +4902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6606c30e640fb4aa6f42f8a8a39e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpiderProjectile
-  speed: 20
-  lifeTime: 50
+  speed: 30
+  lifeTime: 10
 --- !u!1 &4222482553150482890
 GameObject:
   m_ObjectHideFlags: 0

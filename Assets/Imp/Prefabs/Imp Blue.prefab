@@ -223,6 +223,37 @@ Transform:
   - {fileID: 1162706398379211095}
   m_Father: {fileID: 2543500244407785892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &322314967167523907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2488588519771044636}
+  m_Layer: 7
+  m_Name: EyeView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2488588519771044636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322314967167523907}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 4.17, z: 0.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6768212347281410194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385362605437408073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1117,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3797616508573538009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1169425707879874577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7251818465099813543}
+  - component: {fileID: 2740693147065567869}
+  m_Layer: 7
+  m_Name: spawnpoint_shot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7251818465099813543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169425707879874577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4, y: 3.54, z: 0.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6768212347281410194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2740693147065567869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169425707879874577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454ecc7ea17832742927ccf551b4edf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
+  bulletPrefab: {fileID: 4615720598812428177, guid: aa0c6a2d3401fa04981c047d62155017, type: 3}
+  shootPoint: {fileID: 7251818465099813543}
+  shootInterval: 2
+  testShoot: 1
+  canShoot: 1
 --- !u!1 &1184189257615823367
 GameObject:
   m_ObjectHideFlags: 0
@@ -6236,6 +6316,8 @@ GameObject:
   - component: {fileID: 2385600181049298450}
   - component: {fileID: 8811677877968293729}
   - component: {fileID: 1405075874083245059}
+  - component: {fileID: 6469563621778938886}
+  - component: {fileID: 6539081308891599911}
   m_Layer: 7
   m_Name: Imp Blue
   m_TagString: Enemy
@@ -6256,6 +6338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7251818465099813543}
   - {fileID: 271614276981667362}
   - {fileID: 7098099900109289549}
   - {fileID: 5079156029554762677}
@@ -6290,6 +6373,7 @@ Transform:
   - {fileID: 6450343802337653184}
   - {fileID: 2601463794226003015}
   - {fileID: 8322954567105354488}
+  - {fileID: 2488588519771044636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4753936016393506904
@@ -6395,6 +6479,52 @@ MonoBehaviour:
   maxHealth: 500
   playerProjectileTag: Shoot
   towerBulletTag: Bullet
+--- !u!114 &6469563621778938886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243772395542237736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454ecc7ea17832742927ccf551b4edf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
+  bulletPrefab: {fileID: 4615720598812428177, guid: aa0c6a2d3401fa04981c047d62155017, type: 3}
+  shootPoint: {fileID: 7251818465099813543}
+  shootInterval: 2
+  testShoot: 0
+  canShoot: 1
+--- !u!114 &6539081308891599911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243772395542237736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5870ed2dd2a404180bff6a8a5f8fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyViewController
+  player: {fileID: 0}
+  eyePoint: {fileID: 2488588519771044636}
+  patrolSpeed: 3
+  chaseSpeed: 4.5
+  stopDistance: 1.5
+  rotationSpeed: 6
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  viewDistance: 15
+  viewAngle: 90
+  sphereCastRadius: 0.35
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 512
+  debugLogDetection: 1
+  debugDrawGizmos: 1
 --- !u!1 &6252229104833896619
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,55 @@ Transform:
   - {fileID: 4663390017079846825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8468224893331745453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406730702562262734}
+  - component: {fileID: 1820390489413582790}
+  m_Layer: 7
+  m_Name: spawnpoint_shot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406730702562262734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468224893331745453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1.2, z: 0.137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4663390017079846825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820390489413582790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468224893331745453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454ecc7ea17832742927ccf551b4edf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
+  bulletPrefab: {fileID: 608351009297544715, guid: 3d60f027196a01e40b8921e0d6b15688, type: 3}
+  shootPoint: {fileID: 406730702562262734}
+  shootInterval: 2
+  testShoot: 1
+  canShoot: 1
 --- !u!1001 &5133270137731334210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,15 +99,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,7 +115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.76
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -374,7 +423,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 406730702562262734}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f0cb0b28bdc162443b8918ce1226ee50, type: 3}
       insertIndex: -1
@@ -436,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c80e7f88bcc134e97faf7666b3873b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   stopDistance: 1.5
   monsterPrefab: {fileID: 4787734284849576031}
   waypoints:
@@ -461,8 +513,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3460553, y: 2.9527102, z: 2.15535}
-  m_Center: {x: -0.0071140514, y: 0.97635484, z: -0.57768446}
+  m_Size: {x: 2.3460553, y: 2.399516, z: 2.4177759}
+  m_Center: {x: -0.0071140127, y: 1.2529582, z: -0.5489876}
 --- !u!54 &3343661192274157136
 Rigidbody:
   m_ObjectHideFlags: 0
