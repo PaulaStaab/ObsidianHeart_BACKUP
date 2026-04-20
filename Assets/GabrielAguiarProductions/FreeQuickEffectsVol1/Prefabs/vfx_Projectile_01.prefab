@@ -4859,6 +4859,7 @@ GameObject:
   - component: {fileID: 8040166924474701422}
   - component: {fileID: 183900000396469264}
   - component: {fileID: 4125893449046238427}
+  - component: {fileID: 8086012763824643823}
   m_Layer: 0
   m_Name: vfx_Projectile_01
   m_TagString: Untagged
@@ -9702,12 +9703,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.42, y: 1.42, z: 1.42}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.6019606, y: 0.5087025, z: 0.6184787}
+  m_Center: {x: -0.011573046, y: -0.04475069, z: 0.018578917}
 --- !u!54 &183900000396469264
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9734,7 +9735,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4125893449046238427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9748,6 +9749,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpiderProjectile
   speed: 20
+  lifeTime: 5
+  invertDirection: 1
+--- !u!114 &8086012763824643823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473529909581181512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c1005d054a24449adc49806b51622b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::creatureshot_damage
+  damage: 50
   lifeTime: 5
 --- !u!1 &5287990389288925174
 GameObject:

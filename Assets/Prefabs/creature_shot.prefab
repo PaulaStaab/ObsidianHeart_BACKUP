@@ -8,13 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 183900000396469264, guid: bc142210df3ec4545a4e3e1f21e00da7, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3473529909581181512, guid: bc142210df3ec4545a4e3e1f21e00da7, type: 3}
       propertyPath: m_Name
       value: creature_shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125893449046238427, guid: bc142210df3ec4545a4e3e1f21e00da7, type: 3}
+      propertyPath: invertDirection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4559080999636468818, guid: bc142210df3ec4545a4e3e1f21e00da7, type: 3}
       propertyPath: m_LocalPosition.x

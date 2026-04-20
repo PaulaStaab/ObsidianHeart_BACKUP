@@ -107,7 +107,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4592756644009621714}
-  - component: {fileID: 6205134349723457068}
   m_Layer: 7
   m_Name: spawnpoint_shot
   m_TagString: Untagged
@@ -130,23 +129,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 154262934119739793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6205134349723457068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6310239222403035877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454ecc7ea17832742927ccf551b4edf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpiderShoot
-  bulletPrefab: {fileID: 4539074375437649944, guid: fbae5e693b519be4bb644a001174eba4, type: 3}
-  shootPoint: {fileID: 4592756644009621714}
-  shootInterval: 2
-  testShoot: 1
-  canShoot: 1
 --- !u!1001 &4633940910139798727
 PrefabInstance:
   m_ObjectHideFlags: 0

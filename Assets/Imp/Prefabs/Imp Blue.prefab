@@ -6314,7 +6314,6 @@ GameObject:
   - component: {fileID: 4753936016393506904}
   - component: {fileID: 5274442394661938634}
   - component: {fileID: 2385600181049298450}
-  - component: {fileID: 8811677877968293729}
   - component: {fileID: 1405075874083245059}
   - component: {fileID: 6469563621778938886}
   - component: {fileID: 6539081308891599911}
@@ -6446,24 +6445,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.076653, y: 5.0297823, z: 3.4397411}
   m_Center: {x: -0.24269319, y: 2.0148911, z: 0.35283408}
---- !u!114 &8811677877968293729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243772395542237736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c80e7f88bcc134e97faf7666b3873b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterEnemy
-  speed: 3
-  stopDistance: 1.5
-  monsterPrefab: {fileID: 6243772395542237736}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1405075874083245059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6510,6 +6491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyViewController
   player: {fileID: 0}
   eyePoint: {fileID: 2488588519771044636}
+  firePoint: {fileID: 0}
   patrolSpeed: 3
   chaseSpeed: 4.5
   stopDistance: 1.5
@@ -6520,6 +6502,9 @@ MonoBehaviour:
   viewDistance: 15
   viewAngle: 90
   sphereCastRadius: 0.35
+  bulletPrefab: {fileID: 0}
+  shootCooldown: 1.2
+  bulletSpeed: 20
   detectionMask:
     serializedVersion: 2
     m_Bits: 512

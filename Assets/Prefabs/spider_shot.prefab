@@ -155,3 +155,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpiderProjectile
   speed: 20
   lifeTime: 10
+  invertDirection: 1
