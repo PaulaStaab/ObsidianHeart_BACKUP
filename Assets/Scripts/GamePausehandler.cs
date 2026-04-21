@@ -1,5 +1,53 @@
+////////////using UnityEngine;
+////////////using UnityEngine.SceneManagement;
+
+////////////public class GamePauseHandler : MonoBehaviour
+////////////{
+////////////    [SerializeField] private string PauseMenu = "PauseMenu";
+////////////    private bool gameIsFrozen = false;
+
+////////////    void Update()
+////////////    {
+////////////        if (Input.GetKeyDown(KeyCode.P))
+////////////        {
+////////////            TogglePauseState();
+////////////        }
+////////////    }
+
+////////////    private void TogglePauseState()
+////////////    {
+////////////        if (!gameIsFrozen)
+////////////        {
+////////////            ShowPauseMenu();
+////////////        }
+////////////        else
+////////////        {
+////////////            HidePauseMenu();
+////////////        }
+////////////    }
+
+////////////    private void ShowPauseMenu()
+////////////    {
+////////////        SceneManager.LoadScene(PauseMenu, LoadSceneMode.Additive);
+////////////        Time.timeScale = 0f;
+////////////        Cursor.visible = true;
+////////////        Cursor.lockState = CursorLockMode.None;
+////////////        gameIsFrozen = true;
+////////////    }
+
+////////////    private void HidePauseMenu()
+////////////    {
+////////////        SceneManager.UnloadSceneAsync(PauseMenu);
+////////////        Time.timeScale = 1f;
+////////////        Cursor.visible = false;
+////////////        Cursor.lockState = CursorLockMode.Locked;
+////////////        gameIsFrozen = false;
+////////////    }
+////////////}
+
 //////////using UnityEngine;
 //////////using UnityEngine.SceneManagement;
+//////////using UnityEngine.InputSystem;
 
 //////////public class GamePauseHandler : MonoBehaviour
 //////////{
@@ -8,7 +56,7 @@
 
 //////////    void Update()
 //////////    {
-//////////        if (Input.GetKeyDown(KeyCode.P))
+//////////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
 //////////        {
 //////////            TogglePauseState();
 //////////        }
@@ -45,14 +93,158 @@
 //////////    }
 //////////}
 
+////////////using UnityEngine;
+////////////using UnityEngine.SceneManagement;
+////////////using UnityEngine.InputSystem;
+
+////////////public class GamePauseHandler : MonoBehaviour
+////////////{
+////////////    [SerializeField] private string pauseMenuSceneName = "PauseMenu";
+////////////    private bool gameIsFrozen = false;
+
+////////////    void Start()
+////////////    {
+////////////        Time.timeScale = 1f;
+////////////        Cursor.visible = false;
+////////////        Cursor.lockState = CursorLockMode.Locked;
+////////////    }
+
+////////////    void Update()
+////////////    {
+////////////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
+////////////        {
+////////////            TogglePauseState();
+////////////        }
+////////////    }
+
+////////////    public void TogglePauseState()
+////////////    {
+////////////        if (!gameIsFrozen)
+////////////        {
+////////////            PauseGame();
+////////////        }
+////////////        else
+////////////        {
+////////////            ResumeGame();
+////////////        }
+////////////    }
+
+////////////    public void PauseGame()
+////////////    {
+////////////        if (gameIsFrozen)
+////////////            return;
+
+////////////        SceneManager.LoadScene(pauseMenuSceneName, LoadSceneMode.Additive);
+////////////        Time.timeScale = 0f;
+////////////        Cursor.visible = true;
+////////////        Cursor.lockState = CursorLockMode.None;
+////////////        gameIsFrozen = true;
+////////////    }
+
+////////////    public void ResumeGame()
+////////////    {
+////////////        if (!gameIsFrozen)
+////////////            return;
+
+////////////        SceneManager.UnloadSceneAsync(pauseMenuSceneName);
+////////////        Time.timeScale = 1f;
+////////////        Cursor.visible = false;
+////////////        Cursor.lockState = CursorLockMode.Locked;
+////////////        gameIsFrozen = false;
+////////////    }
+
+////////////    public void ContinueButton()
+////////////    {
+////////////        ResumeGame();
+////////////    }
+////////////}
+
+////////////using UnityEngine;
+////////////using UnityEngine.SceneManagement;
+////////////using UnityEngine.InputSystem;
+
+////////////public class GamePauseHandler : MonoBehaviour
+////////////{
+////////////    [SerializeField] private string pauseMenuSceneName = "PauseMenu";
+////////////    private bool gameIsFrozen = false;
+
+////////////    void Start()
+////////////    {
+////////////        ResumeGameVisuals();
+////////////    }
+
+////////////    void Update()
+////////////    {
+////////////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
+////////////        {
+////////////            TogglePauseState();
+////////////        }
+////////////    }
+
+////////////    public void TogglePauseState()
+////////////    {
+////////////        if (gameIsFrozen)
+////////////            ResumeGame();
+////////////        else
+////////////            PauseGame();
+////////////    }
+
+////////////    public void PauseGame()
+////////////    {
+////////////        if (gameIsFrozen)
+////////////            return;
+
+////////////        SceneManager.LoadScene(pauseMenuSceneName, LoadSceneMode.Additive);
+////////////        Time.timeScale = 0f;
+////////////        Cursor.lockState = CursorLockMode.None;
+////////////        Cursor.visible = true;
+////////////        gameIsFrozen = true;
+////////////    }
+
+////////////    public void ResumeGame()
+////////////    {
+////////////        if (!gameIsFrozen)
+////////////            return;
+
+////////////        SceneManager.UnloadSceneAsync(pauseMenuSceneName);
+////////////        Time.timeScale = 1f;
+////////////        Cursor.lockState = CursorLockMode.Locked;
+////////////        Cursor.visible = false;
+////////////        gameIsFrozen = false;
+////////////    }
+
+////////////    public void ContinueButton()
+////////////    {
+////////////        ResumeGame();
+////////////    }
+
+////////////    private void ResumeGameVisuals()
+////////////    {
+////////////        Cursor.lockState = CursorLockMode.Locked;
+////////////        Cursor.visible = false;
+////////////    }
+////////////}
+
 ////////using UnityEngine;
-////////using UnityEngine.SceneManagement;
 ////////using UnityEngine.InputSystem;
 
 ////////public class GamePauseHandler : MonoBehaviour
 ////////{
-////////    [SerializeField] private string PauseMenu = "PauseMenu";
+////////    [SerializeField] private GameObject pauseCanvas; // Ziehe dein PauseCanvas hier rein (im Inspector)
 ////////    private bool gameIsFrozen = false;
+
+////////    void Start()
+////////    {
+////////        // Stelle sicher, dass das Canvas am Anfang deaktiviert ist
+////////        if (pauseCanvas != null)
+////////        {
+////////            pauseCanvas.SetActive(false);
+////////        }
+////////        Time.timeScale = 1f;
+////////        Cursor.visible = false;
+////////        Cursor.lockState = CursorLockMode.Locked;
+////////        gameIsFrozen = false;
+////////    }
 
 ////////    void Update()
 ////////    {
@@ -76,7 +268,10 @@
 
 ////////    private void ShowPauseMenu()
 ////////    {
-////////        SceneManager.LoadScene(PauseMenu, LoadSceneMode.Additive);
+////////        if (pauseCanvas != null)
+////////        {
+////////            pauseCanvas.SetActive(true);
+////////        }
 ////////        Time.timeScale = 0f;
 ////////        Cursor.visible = true;
 ////////        Cursor.lockState = CursorLockMode.None;
@@ -85,7 +280,10 @@
 
 ////////    private void HidePauseMenu()
 ////////    {
-////////        SceneManager.UnloadSceneAsync(PauseMenu);
+////////        if (pauseCanvas != null)
+////////        {
+////////            pauseCanvas.SetActive(false);
+////////        }
 ////////        Time.timeScale = 1f;
 ////////        Cursor.visible = false;
 ////////        Cursor.lockState = CursorLockMode.Locked;
@@ -93,185 +291,57 @@
 ////////    }
 ////////}
 
-//////////using UnityEngine;
-//////////using UnityEngine.SceneManagement;
-//////////using UnityEngine.InputSystem;
-
-//////////public class GamePauseHandler : MonoBehaviour
-//////////{
-//////////    [SerializeField] private string pauseMenuSceneName = "PauseMenu";
-//////////    private bool gameIsFrozen = false;
-
-//////////    void Start()
-//////////    {
-//////////        Time.timeScale = 1f;
-//////////        Cursor.visible = false;
-//////////        Cursor.lockState = CursorLockMode.Locked;
-//////////    }
-
-//////////    void Update()
-//////////    {
-//////////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
-//////////        {
-//////////            TogglePauseState();
-//////////        }
-//////////    }
-
-//////////    public void TogglePauseState()
-//////////    {
-//////////        if (!gameIsFrozen)
-//////////        {
-//////////            PauseGame();
-//////////        }
-//////////        else
-//////////        {
-//////////            ResumeGame();
-//////////        }
-//////////    }
-
-//////////    public void PauseGame()
-//////////    {
-//////////        if (gameIsFrozen)
-//////////            return;
-
-//////////        SceneManager.LoadScene(pauseMenuSceneName, LoadSceneMode.Additive);
-//////////        Time.timeScale = 0f;
-//////////        Cursor.visible = true;
-//////////        Cursor.lockState = CursorLockMode.None;
-//////////        gameIsFrozen = true;
-//////////    }
-
-//////////    public void ResumeGame()
-//////////    {
-//////////        if (!gameIsFrozen)
-//////////            return;
-
-//////////        SceneManager.UnloadSceneAsync(pauseMenuSceneName);
-//////////        Time.timeScale = 1f;
-//////////        Cursor.visible = false;
-//////////        Cursor.lockState = CursorLockMode.Locked;
-//////////        gameIsFrozen = false;
-//////////    }
-
-//////////    public void ContinueButton()
-//////////    {
-//////////        ResumeGame();
-//////////    }
-//////////}
-
-//////////using UnityEngine;
-//////////using UnityEngine.SceneManagement;
-//////////using UnityEngine.InputSystem;
-
-//////////public class GamePauseHandler : MonoBehaviour
-//////////{
-//////////    [SerializeField] private string pauseMenuSceneName = "PauseMenu";
-//////////    private bool gameIsFrozen = false;
-
-//////////    void Start()
-//////////    {
-//////////        ResumeGameVisuals();
-//////////    }
-
-//////////    void Update()
-//////////    {
-//////////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
-//////////        {
-//////////            TogglePauseState();
-//////////        }
-//////////    }
-
-//////////    public void TogglePauseState()
-//////////    {
-//////////        if (gameIsFrozen)
-//////////            ResumeGame();
-//////////        else
-//////////            PauseGame();
-//////////    }
-
-//////////    public void PauseGame()
-//////////    {
-//////////        if (gameIsFrozen)
-//////////            return;
-
-//////////        SceneManager.LoadScene(pauseMenuSceneName, LoadSceneMode.Additive);
-//////////        Time.timeScale = 0f;
-//////////        Cursor.lockState = CursorLockMode.None;
-//////////        Cursor.visible = true;
-//////////        gameIsFrozen = true;
-//////////    }
-
-//////////    public void ResumeGame()
-//////////    {
-//////////        if (!gameIsFrozen)
-//////////            return;
-
-//////////        SceneManager.UnloadSceneAsync(pauseMenuSceneName);
-//////////        Time.timeScale = 1f;
-//////////        Cursor.lockState = CursorLockMode.Locked;
-//////////        Cursor.visible = false;
-//////////        gameIsFrozen = false;
-//////////    }
-
-//////////    public void ContinueButton()
-//////////    {
-//////////        ResumeGame();
-//////////    }
-
-//////////    private void ResumeGameVisuals()
-//////////    {
-//////////        Cursor.lockState = CursorLockMode.Locked;
-//////////        Cursor.visible = false;
-//////////    }
-//////////}
-
 //////using UnityEngine;
 //////using UnityEngine.InputSystem;
+//////using static UnityEngine.InputSystem.DefaultInputActions;
 
 //////public class GamePauseHandler : MonoBehaviour
 //////{
-//////    [SerializeField] private GameObject pauseCanvas; // Ziehe dein PauseCanvas hier rein (im Inspector)
-//////    private bool gameIsFrozen = false;
+//////    [SerializeField] private GameObject pauseCanvas;
 
-//////    void Start()
+//////    private Player input;  // dein generierter Input-Wrapper
+//////    private bool gameIsFrozen;
+
+//////    private void Awake()
 //////    {
-//////        // Stelle sicher, dass das Canvas am Anfang deaktiviert ist
-//////        if (pauseCanvas != null)
-//////        {
-//////            pauseCanvas.SetActive(false);
-//////        }
+//////        input = new Player();          // Klasse aus deinem InputActionAsset
+//////    }
+
+//////    private void OnEnable()
+//////    {
+//////        input.PlayerActions.Enable();
+//////        input.PlayerActions.Pause.performed += OnPause;
+//////    }
+
+//////    private void OnDisable()
+//////    {
+//////        input.PlayerActions.Pause.performed -= OnPause;
+//////        input.PlayerActions.Disable();
+//////    }
+
+//////    private void Start()
+//////    {
+//////        pauseCanvas.SetActive(false);
 //////        Time.timeScale = 1f;
 //////        Cursor.visible = false;
 //////        Cursor.lockState = CursorLockMode.Locked;
 //////        gameIsFrozen = false;
 //////    }
 
-//////    void Update()
+//////    private void OnPause(InputAction.CallbackContext ctx)
 //////    {
-//////        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
-//////        {
-//////            TogglePauseState();
-//////        }
+//////        TogglePauseState();
 //////    }
 
 //////    private void TogglePauseState()
 //////    {
-//////        if (!gameIsFrozen)
-//////        {
-//////            ShowPauseMenu();
-//////        }
-//////        else
-//////        {
-//////            HidePauseMenu();
-//////        }
+//////        if (gameIsFrozen) HidePauseMenu();
+//////        else ShowPauseMenu();
 //////    }
 
 //////    private void ShowPauseMenu()
 //////    {
-//////        if (pauseCanvas != null)
-//////        {
-//////            pauseCanvas.SetActive(true);
-//////        }
+//////        pauseCanvas.SetActive(true);
 //////        Time.timeScale = 0f;
 //////        Cursor.visible = true;
 //////        Cursor.lockState = CursorLockMode.None;
@@ -280,14 +350,17 @@
 
 //////    private void HidePauseMenu()
 //////    {
-//////        if (pauseCanvas != null)
-//////        {
-//////            pauseCanvas.SetActive(false);
-//////        }
+//////        pauseCanvas.SetActive(false);
 //////        Time.timeScale = 1f;
 //////        Cursor.visible = false;
 //////        Cursor.lockState = CursorLockMode.Locked;
 //////        gameIsFrozen = false;
+//////    }
+
+//////    // Für Button im UI
+//////    public void ContinueButton()
+//////    {
+//////        HidePauseMenu();
 //////    }
 //////}
 
@@ -298,13 +371,14 @@
 ////public class GamePauseHandler : MonoBehaviour
 ////{
 ////    [SerializeField] private GameObject pauseCanvas;
+////    [SerializeField] private GameObject escapeMenu;   // <- Dein "EscapeMenu" Canvas
 
 ////    private Player input;  // dein generierter Input-Wrapper
 ////    private bool gameIsFrozen;
 
 ////    private void Awake()
 ////    {
-////        input = new Player();          // Klasse aus deinem InputActionAsset
+////        input = new Player();
 ////    }
 
 ////    private void OnEnable()
@@ -321,7 +395,12 @@
 
 ////    private void Start()
 ////    {
-////        pauseCanvas.SetActive(false);
+////        if (pauseCanvas != null)
+////            pauseCanvas.SetActive(false);
+
+////        if (escapeMenu != null)
+////            escapeMenu.SetActive(false);      // EscapeMenu am Anfang zu
+
 ////        Time.timeScale = 1f;
 ////        Cursor.visible = false;
 ////        Cursor.lockState = CursorLockMode.Locked;
@@ -341,7 +420,12 @@
 
 ////    private void ShowPauseMenu()
 ////    {
-////        pauseCanvas.SetActive(true);
+////        if (pauseCanvas != null)
+////            pauseCanvas.SetActive(true);
+
+////        if (escapeMenu != null)
+////            escapeMenu.SetActive(false);      // sicherstellen, dass es geschlossen startet
+
 ////        Time.timeScale = 0f;
 ////        Cursor.visible = true;
 ////        Cursor.lockState = CursorLockMode.None;
@@ -350,17 +434,31 @@
 
 ////    private void HidePauseMenu()
 ////    {
-////        pauseCanvas.SetActive(false);
+////        if (pauseCanvas != null)
+////            pauseCanvas.SetActive(false);
+
+////        if (escapeMenu != null)
+////            escapeMenu.SetActive(false);      // beim Verlassen auch schließen
+
 ////        Time.timeScale = 1f;
 ////        Cursor.visible = false;
 ////        Cursor.lockState = CursorLockMode.Locked;
 ////        gameIsFrozen = false;
 ////    }
 
-////    // Für Button im UI
+////    // UI-Button „Continue“
 ////    public void ContinueButton()
 ////    {
 ////        HidePauseMenu();
+////    }
+
+////    // UI-Button auf deinem PauseCanvas: öffnet/ schließt das EscapeMenu
+////    public void ToggleEscapeMenu()
+////    {
+////        if (escapeMenu == null) return;
+
+////        bool isActive = escapeMenu.activeSelf;
+////        escapeMenu.SetActive(!isActive);
 ////    }
 ////}
 
@@ -371,9 +469,9 @@
 //public class GamePauseHandler : MonoBehaviour
 //{
 //    [SerializeField] private GameObject pauseCanvas;
-//    [SerializeField] private GameObject escapeMenu;   // <- Dein "EscapeMenu" Canvas
+//    [SerializeField] private GameObject escapeMenu;
 
-//    private Player input;  // dein generierter Input-Wrapper
+//    private Player input;
 //    private bool gameIsFrozen;
 
 //    private void Awake()
@@ -385,11 +483,13 @@
 //    {
 //        input.PlayerActions.Enable();
 //        input.PlayerActions.Pause.performed += OnPause;
+//        input.PlayerActions.Escape.performed += OnEscape;  // <- Neue Action
 //    }
 
 //    private void OnDisable()
 //    {
 //        input.PlayerActions.Pause.performed -= OnPause;
+//        input.PlayerActions.Escape.performed -= OnEscape;
 //        input.PlayerActions.Disable();
 //    }
 
@@ -399,7 +499,7 @@
 //            pauseCanvas.SetActive(false);
 
 //        if (escapeMenu != null)
-//            escapeMenu.SetActive(false);      // EscapeMenu am Anfang zu
+//            escapeMenu.SetActive(false);
 
 //        Time.timeScale = 1f;
 //        Cursor.visible = false;
@@ -410,6 +510,11 @@
 //    private void OnPause(InputAction.CallbackContext ctx)
 //    {
 //        TogglePauseState();
+//    }
+
+//    private void OnEscape(InputAction.CallbackContext ctx)
+//    {
+//        ToggleEscapeMenu();  // Gleiche Logik wie Button
 //    }
 
 //    private void TogglePauseState()
@@ -424,7 +529,7 @@
 //            pauseCanvas.SetActive(true);
 
 //        if (escapeMenu != null)
-//            escapeMenu.SetActive(false);      // sicherstellen, dass es geschlossen startet
+//            escapeMenu.SetActive(false);
 
 //        Time.timeScale = 0f;
 //        Cursor.visible = true;
@@ -438,7 +543,7 @@
 //            pauseCanvas.SetActive(false);
 
 //        if (escapeMenu != null)
-//            escapeMenu.SetActive(false);      // beim Verlassen auch schließen
+//            escapeMenu.SetActive(false);
 
 //        Time.timeScale = 1f;
 //        Cursor.visible = false;
@@ -452,7 +557,7 @@
 //        HidePauseMenu();
 //    }
 
-//    // UI-Button auf deinem PauseCanvas: öffnet/ schließt das EscapeMenu
+//    // UI-Button auf PauseCanvas
 //    public void ToggleEscapeMenu()
 //    {
 //        if (escapeMenu == null) return;
@@ -470,6 +575,7 @@ public class GamePauseHandler : MonoBehaviour
 {
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject escapeMenu;
+    [SerializeField] private AudioSource backgroundMusic; // Hier AudioSource reinziehen
 
     private Player input;
     private bool gameIsFrozen;
@@ -483,7 +589,7 @@ public class GamePauseHandler : MonoBehaviour
     {
         input.PlayerActions.Enable();
         input.PlayerActions.Pause.performed += OnPause;
-        input.PlayerActions.Escape.performed += OnEscape;  // <- Neue Action
+        input.PlayerActions.Escape.performed += OnEscape;
     }
 
     private void OnDisable()
@@ -514,13 +620,15 @@ public class GamePauseHandler : MonoBehaviour
 
     private void OnEscape(InputAction.CallbackContext ctx)
     {
-        ToggleEscapeMenu();  // Gleiche Logik wie Button
+        ToggleEscapeMenu();
     }
 
     private void TogglePauseState()
     {
-        if (gameIsFrozen) HidePauseMenu();
-        else ShowPauseMenu();
+        if (gameIsFrozen)
+            HidePauseMenu();
+        else
+            ShowPauseMenu();
     }
 
     private void ShowPauseMenu()
@@ -530,6 +638,9 @@ public class GamePauseHandler : MonoBehaviour
 
         if (escapeMenu != null)
             escapeMenu.SetActive(false);
+
+        if (backgroundMusic != null && backgroundMusic.isPlaying)
+            backgroundMusic.Pause();
 
         Time.timeScale = 0f;
         Cursor.visible = true;
@@ -545,19 +656,20 @@ public class GamePauseHandler : MonoBehaviour
         if (escapeMenu != null)
             escapeMenu.SetActive(false);
 
+        if (backgroundMusic != null)
+            backgroundMusic.UnPause();
+
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         gameIsFrozen = false;
     }
 
-    // UI-Button „Continue“
     public void ContinueButton()
     {
         HidePauseMenu();
     }
 
-    // UI-Button auf PauseCanvas
     public void ToggleEscapeMenu()
     {
         if (escapeMenu == null) return;
@@ -566,4 +678,3 @@ public class GamePauseHandler : MonoBehaviour
         escapeMenu.SetActive(!isActive);
     }
 }
-

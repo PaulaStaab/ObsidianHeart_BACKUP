@@ -93,17 +93,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pausenmenue_HG_0
+      name: Menue_BG_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 1
         y: 0
-        width: 1299
-        height: 1002
+        width: 1301
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5441ef5883f0eb4ca172ed429a4ccc7
-      internalID: 633647498
+      spriteID: 41e89d1532b736c40b03fa3043545758
+      internalID: -486067717
       vertices: []
       indices: 
       edges: []
@@ -122,7 +148,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 520e8ebdadc73574ca93f31e989aa6ab
+    spriteID: 07b1c12984e1aa04b892d1d38fc514f1
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +158,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pausenmenue_HG_0: 633647498
+      Menue_BG_0: -486067717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
