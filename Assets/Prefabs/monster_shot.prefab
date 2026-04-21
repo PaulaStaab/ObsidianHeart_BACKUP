@@ -4904,7 +4904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpiderProjectile
   speed: 30
-  lifeTime: 10
+  lifeTime: 3
   invertDirection: 0
 --- !u!82 &-446826597236355021
 AudioSource:
@@ -4917,7 +4917,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8727038271347133176, guid: cab66d361c85e484aa7f08a09f9377e2, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 80e50856957708d43995693759ed5398, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
