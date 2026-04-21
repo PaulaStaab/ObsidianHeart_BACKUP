@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7599757572502891689}
   - component: {fileID: 4862831205254482838}
   - component: {fileID: 2943543736945019704}
+  - component: {fileID: 8623389070899655234}
   m_Layer: 7
   m_Name: spider 1
   m_TagString: Enemy
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6251177193446791794}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -88.359985, y: -6.87325, z: -86.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,6 +99,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &8623389070899655234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251177193446791794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5852fb1be2e9efa4eabe61b86ac04da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderShoot
+  bulletPrefab: {fileID: 4539074375437649944, guid: fbae5e693b519be4bb644a001174eba4, type: 3}
+  shootPoint: {fileID: 4592756644009621714}
+  shootInterval: 0.09
+  canShoot: 1
 --- !u!1 &6310239222403035877
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,9 +598,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2360230062975505360, guid: 7852b035c309c154ebf5432bc2b77108, type: 3}
-    - {fileID: 5835724699362453838, guid: 7852b035c309c154ebf5432bc2b77108, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4785951906939733334, guid: 7852b035c309c154ebf5432bc2b77108, type: 3}

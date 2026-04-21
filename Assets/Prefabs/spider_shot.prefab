@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4087015407162921848}
   - component: {fileID: 6630887835376301593}
   - component: {fileID: 8737248770373629384}
+  - component: {fileID: 8690384329318196738}
   m_Layer: 0
   m_Name: spider_shot
   m_TagString: Projectile
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4539074375437649944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c6606c30e640fb4aa6f42f8a8a39e69, type: 3}
   m_Name: 
@@ -156,3 +157,17 @@ MonoBehaviour:
   speed: 20
   lifeTime: 10
   invertDirection: 1
+--- !u!114 &8690384329318196738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539074375437649944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a679f16f39c60148b1894e7c1519ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderProjectile
+  speed: 20
+  lifeTime: 5
