@@ -1,33 +1,38 @@
 using UnityEngine;
 
+// Handles first-person style mouse look rotation and clamps vertical camera movement.
 public class MouseLook : MonoBehaviour
 {
     [Header("Einstellungen")]
-    public float mouseSensitivityX = 250f;  // Sensitivität horizontal (links/rechts)
-    public float mouseSensitivityY = 250f;  // Sensitivität vertikal (hoch/runter)
+    // Horizontal mouse sensitivity.
+    public float mouseSensitivityX = 250f;
+    // Vertical mouse sensitivity.
+    public float mouseSensitivityY = 250f;
 
-    public float minimumY = -60f;           // Max runter schauen
-    public float maximumY = 60f;            // Max hoch schauen
-
-    private float rotationY = 0f;           // Aktuelle vertikale Rotation (X-Achse)
+    // Minimum vertical look angle.
+    public float minimumY = -60f;
+    // Maximum vertical look angle.
+    public float maximumY = 60f;
+    // Stores the current vertical rotation value.
+    private float rotationY = 0f;
 
     void Update()
     {
-        // Mausachsen abfragen
+        // Read mouse movement input and scale it by sensitivity and frame time.
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY * Time.deltaTime;
 
-        // X-Rotation (hoch/runter) clampen
+        // Update and clamp the vertical rotation.
         rotationY -= mouseY;
         rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
-        // Y-Rotation (links/rechts) einfach addieren
+        // Apply the combined vertical and horizontal local rotation.
         transform.localRotation = Quaternion.Euler(rotationY, transform.localEulerAngles.y + mouseX, 0);
     }
 
     void Start()
     {
-        // Cursor im Playmode sperren
+        // Lock and hide the cursor when the scene starts.
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

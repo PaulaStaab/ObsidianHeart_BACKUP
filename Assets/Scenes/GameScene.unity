@@ -553,7 +553,7 @@ MonoBehaviour:
   damagedFence: {fileID: 4127873280566990197}
   triggerObject: {fileID: 154029654}
   smokeFx: {fileID: 1663008226}
-  shotsToBreak: 1
+  shotsToBreak: 1000
   projectileTag: Projectile
   breakNow: 0
   enableLogs: 1
@@ -811,53 +811,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171113709}
   m_CullTransparentMesh: 1
---- !u!1 &197984965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 197984967}
-  - component: {fileID: 197984968}
-  m_Layer: 0
-  m_Name: GamePause
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &197984967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197984965}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 386.06403, y: 188.71574, z: -83.64403}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &197984968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197984965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a820c8a4382a94bbb5bdbd07b13b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GamePauseHandler
-  pauseCanvas: {fileID: 1569249181}
-  escapeMenu: {fileID: 0}
-  backgroundMusic: {fileID: 0}
 --- !u!1 &216519291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1099,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353531172}
   m_CullTransparentMesh: 1
+--- !u!1 &388861652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388861653}
+  - component: {fileID: 388861654}
+  m_Layer: 3
+  m_Name: collider_right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &388861653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388861652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.41, y: 0, z: 5.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266314378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &388861654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388861652}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.884347, y: 31.63536, z: 0.15}
+  m_Center: {x: -4.421973, y: 3.0632057, z: -0.01620061}
 --- !u!1 &403894283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1790,7 @@ GameObject:
   - component: {fileID: 518892784}
   - component: {fileID: 518892783}
   m_Layer: 8
-  m_Name: Cannon (1)
+  m_Name: Cannon_T2_Lv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2243,7 +2249,7 @@ MonoBehaviour:
   damagedFence: {fileID: 8470313285238082908}
   triggerObject: {fileID: 592007611}
   smokeFx: {fileID: 1462877531}
-  shotsToBreak: 5
+  shotsToBreak: 1000
   projectileTag: Projectile
   breakNow: 0
   enableLogs: 1
@@ -2335,7 +2341,7 @@ GameObject:
   - component: {fileID: 638946521}
   - component: {fileID: 638946520}
   m_Layer: 8
-  m_Name: Cannon
+  m_Name: Cannon_T3_Lv1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,7 +2539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671148568}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2bc0a2f3f97f204aa279488adfed400, type: 3}
   m_Name: 
@@ -2940,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -84.4
+      value: -125.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 286d3482078917c4497c654352c4b7aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3850,7 +3856,7 @@ GameObject:
   - component: {fileID: 1017654727}
   - component: {fileID: 1017654726}
   m_Layer: 8
-  m_Name: Cannon (2)
+  m_Name: Cannon_T3_Lv3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4734,9 +4740,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 74805, y: 1448.8595, z: 63810.793}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_LocalScale: {x: 1000, y: 19.368484, z: 853.0285}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 388861653}
+  - {fileID: 1968377909}
+  - {fileID: 1472439908}
+  - {fileID: 1705330320}
   m_Father: {fileID: 1053405430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1266314380
@@ -5966,6 +5976,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6251177193446791794, guid: 1253bb1ea7297574b884399bb5ed7a8d, type: 3}
   m_PrefabInstance: {fileID: 5378102848360283119}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472439907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472439908}
+  - component: {fileID: 1472439909}
+  m_Layer: 3
+  m_Name: collider_back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472439908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472439907}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.96, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266314378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1472439909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472439907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15, y: 31.63536, z: 10}
+  m_Center: {x: 0.051466547, y: 5.890372, z: 0.015559796}
 --- !u!1 &1476995992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,7 +6257,7 @@ GameObject:
   - component: {fileID: 1554100997}
   - component: {fileID: 1554100996}
   m_Layer: 8
-  m_Name: Cannon (2)
+  m_Name: Cannon_T2_Lv3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6695,6 +6758,59 @@ Transform:
   - {fileID: 1346246917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1705330319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705330320}
+  - component: {fileID: 1705330321}
+  m_Layer: 3
+  m_Name: collider_back (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705330320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705330319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.05, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266314378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1705330321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705330319}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15, y: 31.63536, z: 10}
+  m_Center: {x: 0.051466547, y: 5.890372, z: 0.015559796}
 --- !u!1001 &1716572439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6971,7 +7087,7 @@ GameObject:
   - component: {fileID: 1752204507}
   - component: {fileID: 1752204506}
   m_Layer: 8
-  m_Name: Cannon (1)
+  m_Name: Cannon_T3_Lv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7782,6 +7898,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5603604727284634930, guid: 50acedc4b1af1d54090f4f78c946ef53, type: 3}
   m_PrefabInstance: {fileID: 1432307559197469454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1968377908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968377909}
+  - component: {fileID: 1968377910}
+  m_Layer: 3
+  m_Name: collider_right (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1968377909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968377908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.41, y: 0, z: -4.98}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266314378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1968377910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968377908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.377625, y: 31.63536, z: 0.15}
+  m_Center: {x: -4.396106, y: 3.0632057, z: -0.01620061}
 --- !u!1 &1981999203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8470313284903883532, guid: 979eb18c459361d4eaa15c992691a49b, type: 3}
@@ -8617,7 +8786,7 @@ GameObject:
   - component: {fileID: 4109396432126135274}
   - component: {fileID: 7071182760628286273}
   m_Layer: 8
-  m_Name: Cannon
+  m_Name: Cannon_T2_Lv1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8636,7 +8805,6 @@ SceneRoots:
   - {fileID: 1704565086}
   - {fileID: 98939094}
   - {fileID: 216519295}
-  - {fileID: 197984967}
   - {fileID: 457397157}
   - {fileID: 1569249185}
   - {fileID: 1650362900}

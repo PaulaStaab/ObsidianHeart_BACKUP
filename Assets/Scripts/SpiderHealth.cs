@@ -1,45 +1,23 @@
-//using UnityEngine;
-
-//public class SpiderHealth : MonoBehaviour
-//{
-//    public int maxHealth = 10;
-//    public int currentHealth;
-
-//    void Start()
-//    {
-//        currentHealth = maxHealth;
-//    }
-
-//    public void TakeDamage(int damage)
-//    {
-//        currentHealth -= damage;
-
-//        if (currentHealth <= 0)
-//        {
-//            Die();
-//        }
-//    }
-
-//    void Die()
-//    {
-//        Destroy(gameObject);
-//    }
-//}
-
 using UnityEngine;
 
+// Handles the spider's health, damage intake, death,
+// and bullet damage detection through trigger collisions.
 public class SpiderHealth : MonoBehaviour
 {
+    // Maximum health value the spider starts with.
     public float maxHealth = 100f;
+    // Current remaining health during gameplay.
     public float currentHealth;
 
     void Start()
     {
+        // Initialize current health when the spider is created.
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
+        // Reduce the spider's health by the incoming damage amount.
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
@@ -49,22 +27,24 @@ public class SpiderHealth : MonoBehaviour
 
     void Die()
     {
-        // Optional: Effekte, Score-Update, etc.
+        // Optional: effects, score update, etc.
         Destroy(gameObject);
     }
 
-    // Für Trigger-Kollisionen (empfohlen für Bullets)
+    // Used for trigger collisions, recommended for bullet objects.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))  // Tag "Bullet" auf Bullet-Objekten setzen
+        // React only to objects tagged as Bullet.
+        if (other.CompareTag("Bullet"))
         {
             BulletDamage bullet = other.GetComponent<BulletDamage>();
             if (bullet != null)
             {
-                TakeDamage(bullet.damage);  // Damage aus Bullet-Skript
+                // Apply damage defined in the bullet script.
+                TakeDamage(bullet.damage);
             }
-            Destroy(other.gameObject);  // Bullet zerstören
+            // Destroy the bullet after the hit.
+            Destroy(other.gameObject);
         }
     }
 }
-
