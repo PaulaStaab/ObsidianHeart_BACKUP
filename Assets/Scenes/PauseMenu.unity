@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GamePauseHandler
   pauseCanvas: {fileID: 690945892}
   escapeMenu: {fileID: 1397359015}
+  backgroundMusic: {fileID: 0}
 --- !u!1 &400603133
 GameObject:
   m_ObjectHideFlags: 0

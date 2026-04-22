@@ -553,7 +553,7 @@ MonoBehaviour:
   damagedFence: {fileID: 4127873280566990197}
   triggerObject: {fileID: 154029654}
   smokeFx: {fileID: 1663008226}
-  shotsToBreak: 1000
+  shotsToBreak: 100
   projectileTag: Projectile
   breakNow: 0
   enableLogs: 1
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   damagedFence: {fileID: 8470313285238082908}
   triggerObject: {fileID: 592007611}
   smokeFx: {fileID: 1462877531}
-  shotsToBreak: 1000
+  shotsToBreak: 100
   projectileTag: Projectile
   breakNow: 0
   enableLogs: 1
@@ -6775,7 +6775,6 @@ Transform:
   - {fileID: 1858056804}
   - {fileID: 1462877529}
   - {fileID: 1663008224}
-  - {fileID: 543450652826270139}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650362895
@@ -8436,37 +8435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &543450652826270139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148820714241}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1173706, y: 11.814941, z: 7.0191956}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1583100321}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &919132148820714241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543450652826270139}
-  m_Layer: 6
-  m_Name: damaged_fence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &1432307559197469454
 PrefabInstance:
   m_ObjectHideFlags: 0
